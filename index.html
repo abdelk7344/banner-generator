@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jquery Template</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
-    <script>
-    $(function(){
-        
+
+<head>
+  <meta charset="UTF-8">
+  <title>jquery Template</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+    $(function() {
+      $('#customize').click(function() {
+        var company = $('#company').val();
+        var product = $('#product').val();
+        var moto = $('#moto').val();
+        var background = $('#background').val();
+        var border = $('#border').val();
+        var text = $('#text').val();
+        $('h1').html("The All New " + company);
+        $('h2').html("Now introduces " + product);
+        $('p').html(moto);
+        $('#banner').css('background-color', background);
+        $('#banner').css('border-color', border);
+        $('#banner').css('color', text);
+        $('p').css('color', text);
+      });
+       $('#random').click(function() {
+        var colorArray=['green','red','blue']
+        var randomIndex = Math.floor(Math.random() * colorArray.length);
+        $('#banner').css('background-color', colorArray[randomIndex]);
+      });
     });
-    </script>
-  </head>
-  <body>
-  
-  </body>
+  </script>
+  <style>
+    #banner {
+      width: 800px;
+      height: 250px;
+      border: 6px solid red;
+      background: white;
+      color:black;
+      margin: auto;
+    }
+    
+    h1,
+    h2 {
+      text-align: center;
+    }
+    
+    p {
+      text-align: center;
+      color: black;
+      font-size: 28px;
+    }
+  </style>
+</head>
+
+<body>
+  <center>Company Name: <input id="company"><br> 
+          Product Name: <input id="product"><br> 
+          Your Moto: <input id="moto"><br>
+          Background Color: <input type="color" value="#ffffff" id="background"><br>
+          Border Color: <input type="color" value="#ff0000" id="border" ><br>
+          Text Color: <input type="color" value="#000000" id="text" ><br>
+
+    <button id='customize'>Generate Banner</button>
+    <button id='random'>Random Background</button>
+  </center>
+  <div id="banner">
+    <h1>The All New </h1>
+    <h2>Now introduces </h2>
+    <p></p>
+  </div>
+</body>
+
 </html>
