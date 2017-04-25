@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>jquery Template</title>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
   <script>
     $(function() {
       $('#customize').click(function() {
@@ -22,8 +23,8 @@
         $('#banner').css('color', text);
         $('p').css('color', text);
       });
-       $('#random').click(function() {
-        var colorArray=['green','red','blue','AntiqueWhite','Aqua','Aquamarine','Chartreuse','CadetBlue','CornflowerBlue','Coral','Crimson','Cyan','DarkOrange','white']
+      $('#random').click(function() {
+        var colorArray = ['green', 'red', 'blue', 'AntiqueWhite', 'Aqua', 'Aquamarine', 'Chartreuse', 'CadetBlue', 'CornflowerBlue', 'Coral', 'Crimson', 'Cyan', 'DarkOrange', 'white']
         var randomIndex = Math.floor(Math.random() * colorArray.length);
         $('#banner').css('background-color', colorArray[randomIndex]);
       });
@@ -34,32 +35,29 @@
       width: 800px;
       height: 250px;
       border: 6px solid red;
-      border-radius:25px;
+      border-radius: 25px;
       background: white;
-      color:black;
+      color: black;
       margin: auto;
     }
     
     h1,
     h2 {
       text-align: center;
+      font-family: 'Lobster', cursive;
     }
     
     p {
       text-align: center;
       color: black;
       font-size: 28px;
+      font-family: 'Indie Flower', cursive;
     }
   </style>
 </head>
 
 <body>
-  <center>Company Name: <input id="company"><br> 
-          Product Name: <input id="product"><br> 
-          Your Moto: <input id="moto"><br>
-          Background Color: <input type="color" value="#ffffff" id="background"><br>
-          Border Color: <input type="color" value="#ff0000" id="border" ><br>
-          Text Color: <input type="color" value="#000000" id="text" ><br>
+  <center>Company Name: <input id="company"><br> Product Name: <input id="product"><br> Your Moto: <input id="moto"><br> Background Color: <input type="color" value="#ffffff" id="background"><br> Border Color: <input type="color" value="#ff0000" id="border"><br>    Text Color: <input type="color" value="#000000" id="text"><br>
 
     <button id='customize'>Generate Banner</button>
     <button id='random'>Random Background</button>
